@@ -115,22 +115,6 @@ export default function DrawerAppBar(props) {
                                         setUserInfoVisible(!userInfoVisible);
                                     }}
                                 />
-                                {userInfoVisible && (
-                                    <Paper style={{ width: '250px', padding: '16px' }} elevation={3} className="user-info-dropdown">
-                                        <h4 className="welcome-message">{profile.name}</h4>
-                                        <p className="email-address">{profile.email}</p>
-                                        <div style={{ textAlign: 'right' }} className="logout-button-container">
-                                            <button style={{
-                                                backgroundColor: 'black',
-                                                color: 'white',
-                                                padding: '8px 16px',
-                                                border: 'none',
-                                                cursor: 'pointer'
-                                            }} className="logout-button" onClick={logOut}>
-                                                Log out
-                                            </button></div>
-                                    </Paper>
-                                )}
                             </div>
                         ) : (
                             <div className="login-button">
@@ -146,7 +130,6 @@ export default function DrawerAppBar(props) {
                             </div>
                         )}
                     </div>
-
                 </Toolbar>
             </AppBar>
             <nav>
@@ -166,7 +149,25 @@ export default function DrawerAppBar(props) {
                     {drawer}
                 </Drawer>
             </nav>
-            
+            {userInfoVisible && profile && (
+                <div className="user-info" style={{ position: 'absolute', top: '10%', right: '2%' }}>
+                    <Paper style={{ width: '250px', padding: '16px' }} elevation={3} className="user-info-dropdown">
+                        <h4 className="welcome-message">{profile.name}</h4>
+                        <p className="email-address">{profile.email}</p>
+                        <div style={{ textAlign: 'right' }} className="logout-button-container">
+                            <button style={{
+                                backgroundColor: 'black',
+                                color: 'white',
+                                padding: '8px 16px',
+                                border: 'none',
+                                cursor: 'pointer'
+                            }} className="logout-button" onClick={logOut}>
+                                Log out
+                            </button>
+                        </div>
+                    </Paper>
+                </div>
+            )}
         </Box>
     );
 }
