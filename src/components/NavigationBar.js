@@ -150,7 +150,7 @@ export default function DrawerAppBar(props) {
                 </Drawer>
             </nav>
             {userInfoVisible && profile && (
-                <div className="user-info" style={{ position: 'absolute', top: '10%', right: '2%' }}>
+                <div className="user-info" style={{ position: 'fixed', top: '10%', right: '2%' }}>
                     <Paper style={{ width: '250px', padding: '16px' }} elevation={3} className="user-info-dropdown">
                         <h4 className="welcome-message">{profile.name}</h4>
                         <p className="email-address">{profile.email}</p>
