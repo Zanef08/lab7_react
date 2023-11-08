@@ -27,7 +27,7 @@ export default function DrawerAppBar(props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                Football News
+                StudentManagement
             </Typography>
             <Divider />
             <List>
@@ -92,7 +92,7 @@ export default function DrawerAppBar(props) {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        Football News
+                        StudentManagement
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
@@ -103,15 +103,6 @@ export default function DrawerAppBar(props) {
                             )
                         ))}
                     </Box>
-                    <Link style={{marginRight: '8px', marginLeft: '8px'}} to="/login"> 
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            sx={{ color: '#fff' }}
-                        >
-                            Login
-                        </Button>
-                    </Link>
                     {/* Add "Sign in with Google" button here */}
                     <div className="login-section">
                         {profile ? (
@@ -148,7 +139,7 @@ export default function DrawerAppBar(props) {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true,
+                        keepMounted: true, 
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
