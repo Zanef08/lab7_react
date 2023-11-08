@@ -27,7 +27,7 @@ export default function DrawerAppBar(props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                StudentManagement
+                Football News
             </Typography>
             <Divider />
             <List>
@@ -92,17 +92,26 @@ export default function DrawerAppBar(props) {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        StudentManagement
+                        Football News
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Link to={item === 'Home' ? '/' : item}>
-                                <Button key={item} sx={{ color: '#fff' }}>
-                                    {item}
-                                </Button>
-                            </Link>
+                            item === 'Dashboard' && !profile ? null : (
+                                <Link to={item === 'Home' ? '/' : item} key={item}>
+                                    <Button sx={{ color: '#fff' }}>{item}</Button>
+                                </Link>
+                            )
                         ))}
                     </Box>
+                    <Link style={{marginRight: '8px', marginLeft: '8px'}} to="/login"> 
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            sx={{ color: '#fff' }}
+                        >
+                            Login
+                        </Button>
+                    </Link>
                     {/* Add "Sign in with Google" button here */}
                     <div className="login-section">
                         {profile ? (
@@ -139,7 +148,7 @@ export default function DrawerAppBar(props) {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },

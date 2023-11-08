@@ -10,12 +10,8 @@ import Dashboard from './components/Dashboard';
 import Detail from './components/Detail';
 import AddStudent from './components/AddStudent';
 import UpdateStudent from './components/UpdateStudent';
-import React, { useState, useEffect } from 'react';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
 import './App.css';
-import Avatar from '@mui/material/Avatar';
-import Paper from '@mui/material/Paper';
+import Login from './components/Login'
 
 function App() {
   return (
@@ -38,7 +34,7 @@ function App() {
 
         <Route path='/UpdateStudent/:id' element={<UpdateStudent />}></Route>
 
-
+        <Route path='/login' element={<Login />}></Route>
       </Routes>
 
     </div>
